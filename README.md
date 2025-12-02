@@ -36,6 +36,10 @@ O código foi modularizado utilizando o conceito de **TAD (Tipo Abstrato de Dado
 Certifique-se de ter um compilador C/C++.
 
 ### Compilando (Linux/Mac/WSL)
-* Em C
+* Compilando (em C)
 ```bash
 gcc -o executavel *.c
+```
+* Executando
+```bash
+./executavel
