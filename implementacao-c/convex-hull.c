@@ -117,7 +117,7 @@ int compare(const void* vp1, const void* vp2) {
 
 void grahamScan(point points[], int n) {
     // 1. Encontrar o ponto mais baixo (e mais à esquerda em caso de empate)
-    int ymin = points[0].y, min = 0;
+    int ymin = points[0].y, min = 0;    //começa sendo o primeiro elemento
     for (int i = 1; i < n; i++) {
         int y = points[i].y;
         // Escolhe o menor Y ou, se Y igual, o menor X
@@ -135,11 +135,6 @@ void grahamScan(point points[], int n) {
 
     // 3. Ordena os pontos restantes (do índice 1 ao n-1) baseando-se no ângulo polar
     qsort(&points[1], n - 1, sizeof(point), compare);
-
-    // *Tratamento de Colineares (Opcional mas recomendado)*:
-    // Se dois ou mais pontos formam o mesmo ângulo com p0, qsort coloca o mais longe por último.
-    // O ideal seria remover os pontos intermediários colineares aqui, mas o loop principal
-    // do Graham geralmente cuida disso se a lógica estiver sólida.
     
     // Se houver menos de 3 pontos, o fecho convexo é impossível
     if (n < 3) return;
